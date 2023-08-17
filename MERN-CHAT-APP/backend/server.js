@@ -3,6 +3,8 @@ const dotenv = require('dotenv');
 const {chats} = require('./data/dummy_data');
 const { param } = require('express/lib/request');
 const connectDB = require('./config/db')
+const userRoutes = require('./routes/userRoutes')
+const chatRoutes = require('./routes/chatRoutes')
 
 const app = express();
 
@@ -10,24 +12,19 @@ dotenv.config();
 
 connectDB()
 
+app.use(express.json());  // to accespt JSON data
+
 
 app.get('/', (req, res) => {
   res.send('Home API is Running successfully ');
 });
 
-app.get('/api/chat', (req, res) => {
-    res.send(chats);
-  });
-  
 
 
-  app.get('/api/chat/:id', (req, res) => {
+app.use('/api/user',userRoutes)
 
-    const singlechat = chats.find((c)=>c._id === req.params.id)
-    //console.log(singlechat);
-    res.send(singlechat);
-    
-  });
+app.use('/api/chat',chatRoutes)
+
 
 
 const port = process.env.PORT || 5000
