@@ -151,7 +151,7 @@ const accessChat = async (userId) => {
 
         </Tooltip>
 
-        <Text fontSize="2xl" fontFamily="Work sans">Talk-A-Tive</Text>
+        <Text fontSize="2xl" fontFamily="Work sans">SD-CHAT-APP</Text>
 
         <div>
             <Menu>
