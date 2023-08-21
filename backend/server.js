@@ -9,16 +9,16 @@ const messageRoutes = require('./routes/messageRoutes');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 const path = require('path');
 
-
-const app = express();
 dotenv.config();
+const app = express();
+
 connectDB()
 app.use(express.json());  // to accespt JSON data
 
 
-app.get('/', (req, res) => {
-  res.send('Home API is Running successfully ');
-});
+// app.get("/", (req, res) => {
+//   res.send("API Running!");
+// });
 
 
 app.use('/api/user',userRoutes)
@@ -47,11 +47,14 @@ if (process.env.NODE_ENV === "production") {
 app.use(notFound);
 app.use(errorHandler);
 
-const port = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 
 
 
-const server = app.listen(port, () => { console.log(`Example app listening on port ${port}`);});
+const server = app.listen(
+  PORT,
+  console.log(`Server running on PORT ${PORT}...`)
+);
 
 
 const io = require("socket.io")(server, {
