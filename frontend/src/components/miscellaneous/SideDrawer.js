@@ -21,7 +21,7 @@ import { Box,
       Spinner,
       } from "@chakra-ui/react";
 
-import { BellIcon, ChevronDownIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useState } from "react";
 import { ChatState } from "../../context/chatprovider";
 import ProfileModal from "./ProfileModal";
@@ -136,7 +136,7 @@ const accessChat = async (userId) => {
         display="flex"
         justifyContent={"space-between"}
         alignItems="center"
-        bg="white"
+        bg="#d4d8fa"
         
         padding="5px 10px 5px 10px"
         borderWidth="5px"
@@ -145,21 +145,16 @@ const accessChat = async (userId) => {
 
             <Button variant={"ghost"} onClick={onOpen}>
                 <i class="fas fa-search"></i>
-                <Text d={{ base: "none", md: "flex" }} px={4}>Search User</Text>
+                <Text display={{ base: "none", md: "flex" }} px={4}>Search User</Text>
             </Button>
 
 
         </Tooltip>
 
-        <Text fontSize="2xl" fontFamily="Work sans">SD-CHAT-APP</Text>
+        <Text fontSize="2xl" fontFamily="Work sans" fontWeight="bold">SD-CHAT-APP</Text>
 
         <div>
-            <Menu>
-                <MenuButton p={1}>
-                    <BellIcon fontSize="3xl" m={1}/>
-                </MenuButton>
-                
-            </Menu>
+           
 
 
             <Menu> 

@@ -53,7 +53,8 @@ const MyChats = ({ fetchAgain }) => {
      flexDirection="column"
      alignItems="center"
      p={5}
-     bg="white"
+     bg="#d4d8fa"
+     
      w={{ base: "100%", md: "30%" }}
      borderRadius="lg"
      borderWidth="1px"
@@ -76,7 +77,8 @@ const MyChats = ({ fetchAgain }) => {
       
       display="flex"
       
-      fontSize={{base: "17px", md: "10px", lg: "17px" }}
+      fontSize={{base: "13px", md: "10px", lg: "17px" }}
+      
       rightIcon={<AddIcon/>}
     >
 

@@ -22,7 +22,7 @@ const Homepage = () => {
             borderRadius="lg"
             borderWidth="1px"
           >
-              <Text fontSize="4xl" fontFamily="Work sans" color={'black'}>Subham-Chat-App</Text>
+              <Text fontSize="3xl" fontFamily="Work sans" color={'black'}>Subham-Chat-App</Text>
 
           </Box>
 
